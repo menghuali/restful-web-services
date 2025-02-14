@@ -14,6 +14,12 @@ public class ErrorDetails {
         this.details = details;
     }
 
+    public ErrorDetails(String message, String details) {
+        this.timestamp = LocalDateTime.now();
+        this.message = message;
+        this.details = details;
+    }
+
     public LocalDateTime getTimestamp() {
         return timestamp;
     }

@@ -2,10 +2,17 @@ package aloha.spring.restful_web_services.user;
 
 import java.time.LocalDate;
 
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Past;
+
 public class User {
 
     private Integer id;
+
+    @NotBlank(message = "User name can't be blank")
     private String name;
+
+    @Past(message = "Birth date must be in the past")
     private LocalDate birthDate;
 
     public User() {
