@@ -12,8 +12,15 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.Parameter;
+import io.swagger.v3.oas.annotations.media.Content;
+import io.swagger.v3.oas.annotations.media.Schema;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 
+@Tag(name = "User API", description = "Operations related to users")
 @RestController
 public class UserController {
 
@@ -23,11 +30,17 @@ public class UserController {
         this.dao = dao;
     }
 
+    @Operation(summary = "Get all users", description = "Get all users")
     @GetMapping("/users")
     public List<User> allUsers() {
         return dao.findAll();
     }
 
+    @Parameter(name = "id", description = "User id", required = true, example = "123")
+    @Operation(summary = "Get a user by ID", description = "Returns user details for a given ID", responses = {
+            @ApiResponse(responseCode = "200", description = "User found"),
+            @ApiResponse(responseCode = "404", description = "User not found")
+    })
     @GetMapping("/users/{id}")
     public User getUser(@PathVariable("id") int id) {
         User user = dao.findOne(id);
@@ -39,8 +52,13 @@ public class UserController {
         }
     }
 
+    @io.swagger.v3.oas.annotations.parameters.RequestBody(description = "User to be created", required = true, content = @Content(mediaType = "application/json", schema = @Schema(implementation = User.class)))
+    @Operation(summary = "Create a user", description = "Create a user", responses = {
+            @ApiResponse(responseCode = "201", description = "User created")
+    })
     @PostMapping("/users")
-    public ResponseEntity<User> createUser(@Valid @RequestBody User user) {
+    public ResponseEntity<User> createUser(
+            @Valid @RequestBody User user) {
         User savedUser = dao.save(user);
         // Return the location URI of a created resource.
         URI location = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(savedUser.getId())
@@ -48,6 +66,11 @@ public class UserController {
         return ResponseEntity.created(location).build();
     }
 
+    @Parameter(name = "id", description = "User id", required = true, example = "123")
+    @Operation(summary = "Delete a user by ID", description = "Delete a user by ID", responses = {
+            @ApiResponse(responseCode = "200", description = "User deleted"),
+            @ApiResponse(responseCode = "404", description = "User not found")
+    })
     @DeleteMapping("/users/{id}")
     public void deleteUser(@PathVariable int id) {
         if (!dao.deleteById(id)) {

@@ -2,16 +2,21 @@ package aloha.spring.restful_web_services.user;
 
 import java.time.LocalDate;
 
+import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Past;
 
+@Schema(description = "User entity")
 public class User {
 
+    @Schema(description = "User ID", example = "123")
     private Integer id;
 
+    @Schema(description = "User name", example = "John")
     @NotBlank(message = "User name can't be blank")
     private String name;
 
+    @Schema(description = "User birth date", example = "2000-01-01")
     @Past(message = "Birth date must be in the past")
     private LocalDate birthDate;
 
