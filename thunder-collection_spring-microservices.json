@@ -1,0 +1,163 @@
+{
+    "clientName": "Thunder Client",
+    "collectionName": "spring-microservices",
+    "collectionId": "1d73e7de-d8aa-47a5-a29c-4a51a07f0570",
+    "dateExported": "2025-02-15T19:51:11.307Z",
+    "version": "1.2",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "38f0b65e-052c-437d-ac68-2da91f4c00d1",
+            "colId": "1d73e7de-d8aa-47a5-a29c-4a51a07f0570",
+            "containerId": "",
+            "name": "Hello World",
+            "url": "http://localhost:8080/hello-world",
+            "method": "GET",
+            "sortNum": 10000,
+            "created": "2025-02-12T00:46:00.897Z",
+            "modified": "2025-02-12T00:46:00.897Z",
+            "headers": []
+        },
+        {
+            "_id": "89bb2164-7ecf-4fb2-843a-74bfa1c77605",
+            "colId": "1d73e7de-d8aa-47a5-a29c-4a51a07f0570",
+            "containerId": "",
+            "name": "Hello World i18n",
+            "url": "http://localhost:8080/hello-world-i18n",
+            "method": "GET",
+            "sortNum": 15000,
+            "created": "2025-02-15T19:38:12.752Z",
+            "modified": "2025-02-15T19:38:43.631Z",
+            "headers": []
+        },
+        {
+            "_id": "498156b1-d014-4b4e-aa3c-5a94ee63b807",
+            "colId": "1d73e7de-d8aa-47a5-a29c-4a51a07f0570",
+            "containerId": "",
+            "name": "Hello World Bean",
+            "url": "http://localhost:8080/hello-world-bean/a",
+            "method": "GET",
+            "sortNum": 20000,
+            "created": "2025-02-12T23:21:21.295Z",
+            "modified": "2025-02-15T02:44:57.374Z",
+            "headers": []
+        },
+        {
+            "_id": "abbd590a-92fb-4356-b115-a218efc2ad78",
+            "colId": "1d73e7de-d8aa-47a5-a29c-4a51a07f0570",
+            "containerId": "",
+            "name": "Hello World i18n Spanish",
+            "url": "http://localhost:8080/hello-world-i18n",
+            "method": "GET",
+            "sortNum": 25000,
+            "created": "2025-02-15T19:48:52.773Z",
+            "modified": "2025-02-15T19:49:10.142Z",
+            "headers": [
+                {
+                    "name": "Accept-Language",
+                    "value": "es"
+                }
+            ]
+        },
+        {
+            "_id": "a6fe449b-9197-438e-bba6-6958818c0a49",
+            "colId": "1d73e7de-d8aa-47a5-a29c-4a51a07f0570",
+            "containerId": "",
+            "name": "Users",
+            "url": "http://localhost:8080/users",
+            "method": "GET",
+            "sortNum": 30000,
+            "created": "2025-02-13T00:55:42.023Z",
+            "modified": "2025-02-13T00:56:07.840Z",
+            "headers": []
+        },
+        {
+            "_id": "da6cf23e-4fa4-427b-8d4b-e8dd6928461d",
+            "colId": "1d73e7de-d8aa-47a5-a29c-4a51a07f0570",
+            "containerId": "",
+            "name": "Hello World i18n Chinese",
+            "url": "http://localhost:8080/hello-world-i18n",
+            "method": "GET",
+            "sortNum": 35000,
+            "created": "2025-02-15T19:50:30.310Z",
+            "modified": "2025-02-15T19:50:48.354Z",
+            "headers": [
+                {
+                    "name": "Accept-Language",
+                    "value": "zh"
+                }
+            ]
+        },
+        {
+            "_id": "953f3e0a-fb0d-4fc7-afea-c62b699dead3",
+            "colId": "1d73e7de-d8aa-47a5-a29c-4a51a07f0570",
+            "containerId": "",
+            "name": "One User",
+            "url": "http://localhost:8080/users/4",
+            "method": "GET",
+            "sortNum": 40000,
+            "created": "2025-02-13T00:57:10.090Z",
+            "modified": "2025-02-13T02:30:40.385Z",
+            "headers": []
+        },
+        {
+            "_id": "23eb1e6c-15c8-4548-9658-fc319a8eaf47",
+            "colId": "1d73e7de-d8aa-47a5-a29c-4a51a07f0570",
+            "containerId": "",
+            "name": "Users XML",
+            "url": "http://localhost:8080/users",
+            "method": "GET",
+            "sortNum": 40000,
+            "created": "2025-02-15T02:51:36.899Z",
+            "modified": "2025-02-15T02:52:14.986Z",
+            "headers": [
+                {
+                    "name": "Accept",
+                    "value": "application/xml"
+                }
+            ]
+        },
+        {
+            "_id": "800740ea-c169-4c42-abd8-2397c779bb70",
+            "colId": "1d73e7de-d8aa-47a5-a29c-4a51a07f0570",
+            "containerId": "",
+            "name": "Create User",
+            "url": "http://localhost:8080/users",
+            "method": "POST",
+            "sortNum": 50000,
+            "created": "2025-02-13T01:08:32.040Z",
+            "modified": "2025-02-15T02:42:43.938Z",
+            "headers": []
+        },
+        {
+            "_id": "012238f3-1b92-447c-84a8-2a03c79ae331",
+            "colId": "1d73e7de-d8aa-47a5-a29c-4a51a07f0570",
+            "containerId": "",
+            "name": "Users YAML",
+            "url": "http://localhost:8080/users",
+            "method": "GET",
+            "sortNum": 50000,
+            "created": "2025-02-15T02:55:15.455Z",
+            "modified": "2025-02-15T02:55:32.868Z",
+            "headers": [
+                {
+                    "name": "Accept",
+                    "value": "application/yaml"
+                }
+            ]
+        },
+        {
+            "_id": "e8bf13af-c5e2-4a8c-8634-32f174b4f33e",
+            "colId": "1d73e7de-d8aa-47a5-a29c-4a51a07f0570",
+            "containerId": "",
+            "name": "Delete User",
+            "url": "http://localhost:8080/users/3",
+            "method": "DELETE",
+            "sortNum": 60000,
+            "created": "2025-02-13T02:48:52.395Z",
+            "modified": "2025-02-13T02:49:31.166Z",
+            "headers": []
+        }
+    ],
+    "ref": "vOYbzOCi5ELFP0Jfyb_MbzTnALVgXzWh-BHD24COsMTtX7PFba3c3OsEoOkx1rB70Uioag1F4RpULj324JR8Lw"
+}
