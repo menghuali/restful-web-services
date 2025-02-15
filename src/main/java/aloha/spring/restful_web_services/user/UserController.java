@@ -3,6 +3,7 @@ package aloha.spring.restful_web_services.user;
 import java.net.URI;
 import java.util.List;
 
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -30,8 +31,12 @@ public class UserController {
         this.dao = dao;
     }
 
-    @Operation(summary = "Get all users", description = "Get all users")
-    @GetMapping("/users")
+    @Operation(summary = "Get all users", description = "Get all users", responses = {
+            @ApiResponse(responseCode = "200", description = "Successful response"),
+            @ApiResponse(responseCode = "404", description = "Users not found")
+    })
+    @GetMapping(path = "/users", produces = { MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE,
+            MediaType.APPLICATION_YAML_VALUE })
     public List<User> allUsers() {
         return dao.findAll();
     }
@@ -41,7 +46,8 @@ public class UserController {
             @ApiResponse(responseCode = "200", description = "User found"),
             @ApiResponse(responseCode = "404", description = "User not found")
     })
-    @GetMapping("/users/{id}")
+    @GetMapping(path = "/users/{id}", produces = { MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE,
+            MediaType.APPLICATION_YAML_VALUE })
     public User getUser(@PathVariable("id") int id) {
         User user = dao.findOne(id);
         if (user == null) {
