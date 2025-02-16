@@ -5,12 +5,18 @@ import java.time.LocalDate;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import io.swagger.v3.oas.annotations.media.Schema;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.Id;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Past;
 
+@Entity(name = "user_details")
 @Schema(description = "User entity")
 public class User {
 
+    @GeneratedValue
+    @Id
     @Schema(description = "User ID", example = "123")
     private Integer id;
 
