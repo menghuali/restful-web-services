@@ -108,6 +108,13 @@ public class UserJpaController {
     })
     @DeleteMapping("/jpa/users/{id}")
     public ResponseEntity<Void> deleteUser(@PathVariable int id) {
+        Optional<User> user = userRepo.findById(id);
+        if (!user.isPresent())
+            throw new UserNotFoundException();
+        List<Post> posts = user.get().getPosts();
+        for (Post post : posts) {
+            postRepo.delete(post);
+        }
         userRepo.deleteById(id);
         return new ResponseEntity<>(HttpStatusCode.valueOf(204));
     }
